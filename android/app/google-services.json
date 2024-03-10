@@ -1,0 +1,155 @@
+{
+  "project_info": {
+    "project_number": "447147831350",
+    "firebase_url": "https://estudos-firebase-ee26b-default-rtdb.firebaseio.com",
+    "project_id": "estudos-firebase-ee26b",
+    "storage_bucket": "estudos-firebase-ee26b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447147831350:android:edfa3e9bf0fde6829c6897",
+        "android_client_info": {
+          "package_name": "br.com.dinosoft.job_timer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447147831350-jplttob6ea3jn2iov7fr1l89e91ut2gs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2K9l5VwQKNcdHvgEi9dK2snWK-vZBy1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447147831350-jplttob6ea3jn2iov7fr1l89e91ut2gs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "447147831350-5570to0rmkbanl1lagsmb116tpie8hsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.dinosoft.jobTimer"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447147831350:android:605237fd38721fb39c6897",
+        "android_client_info": {
+          "package_name": "com.example.fibaseestudo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447147831350-jplttob6ea3jn2iov7fr1l89e91ut2gs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2K9l5VwQKNcdHvgEi9dK2snWK-vZBy1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447147831350-jplttob6ea3jn2iov7fr1l89e91ut2gs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "447147831350-5570to0rmkbanl1lagsmb116tpie8hsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.dinosoft.jobTimer"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447147831350:android:ae19f83405d424e89c6897",
+        "android_client_info": {
+          "package_name": "com.jefferson.teste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447147831350-jplttob6ea3jn2iov7fr1l89e91ut2gs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2K9l5VwQKNcdHvgEi9dK2snWK-vZBy1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447147831350-jplttob6ea3jn2iov7fr1l89e91ut2gs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "447147831350-5570to0rmkbanl1lagsmb116tpie8hsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.dinosoft.jobTimer"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447147831350:android:bac9d8a671170b969c6897",
+        "android_client_info": {
+          "package_name": "com.jefferson.testee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447147831350-jplttob6ea3jn2iov7fr1l89e91ut2gs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2K9l5VwQKNcdHvgEi9dK2snWK-vZBy1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447147831350-jplttob6ea3jn2iov7fr1l89e91ut2gs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "447147831350-5570to0rmkbanl1lagsmb116tpie8hsk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.dinosoft.jobTimer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
