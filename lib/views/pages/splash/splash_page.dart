@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:job_timer/controllers/core/ui/job_time_icons.dart';
+import 'package:job_timer/controllers/core/ui/app_colors.dart';
+import 'package:job_timer/controllers/helper/constants/assets_constants.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -12,11 +13,17 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Splash'),
-      ),
       body: Container(
-        child: Center(child: Icon(JobTimeIcons.angle_double_right),),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: AppColors.gradientColors,
+          ),
+        ),
+        child: Center(
+          child: Image.asset(
+            AssetsConstants.appLogo,
+          ),
+        ),
       ),
     );
   }
