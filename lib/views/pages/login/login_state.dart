@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:asuka/asuka.dart';
 import 'package:flutter/widgets.dart';
 import 'package:job_timer/controllers/services/auth_service.dart';
 
@@ -21,7 +24,9 @@ class LoginState extends ChangeNotifier {
     try {
       setLoading(value: true);
       await _service.signIn();
-    } catch (e) {
+    } catch (e, s) {
+      log('Erro ao realizar login', error: e, stackTrace: s);
+      AsukaSnackbar.alert("Erro ao realizar login").show();
       rethrow;
     } finally {
       setLoading(value: false);
