@@ -4,5 +4,7 @@ enum ProjectStatus {
 
   final String label;
 
-  const ProjectStatus({required this.label});
+  const ProjectStatus({
+    required this.label,
+  });
 }

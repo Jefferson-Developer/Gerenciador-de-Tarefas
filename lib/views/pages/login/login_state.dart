@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:asuka/asuka.dart';
 import 'package:flutter/widgets.dart';
-import 'package:job_timer/controllers/services/auth_service.dart';
+import 'package:job_timer/controllers/services/firebase/auth/auth_service.dart';
 
 class LoginState extends ChangeNotifier {
   final AuthService _service;
