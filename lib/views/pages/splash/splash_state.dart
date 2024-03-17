@@ -12,9 +12,9 @@ class SplashState extends ChangeNotifier {
     FirebaseAuth.instance.authStateChanges().listen(
       (User? user) {
         if (user == null) {
-          Modular.to.navigate('/login');
+          Modular.to.navigate('/login/');
         } else {
-          Modular.to.navigate('/home');
+          Modular.to.navigate('/home/');
         }
       },
     );

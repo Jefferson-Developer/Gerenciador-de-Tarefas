@@ -10,6 +10,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
     ModularApp(
+      debugMode: false,
       module: AppModule(),
       child: const AppWidget(),
     ),
