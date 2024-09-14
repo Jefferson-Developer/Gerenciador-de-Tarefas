@@ -41,18 +41,18 @@ dependencies:
       url: https://github.com/Flutterando/asuka.git
       ref: 82e0b98497d19d42e974d8252b31d13fde8e4ffb
   validatorless: ^1.2.3
-  fl_chart: ^0.66.1
-  firebase_core: ^2.24.2
-  firebase_auth: ^4.16.0
+  fl_chart: ^0.69.0
+  firebase_core: ^3.4.1
+  firebase_auth: ^5.2.1
   google_sign_in: ^6.2.1
   equatable: ^2.0.5
   path_provider: ^2.1.2
-  cloud_firestore: ^4.15.9
+  cloud_firestore: ^5.4.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  lints: ^3.0.0
-  flutter_lints: ^3.0.0
+  lints: ^4.0.0
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
