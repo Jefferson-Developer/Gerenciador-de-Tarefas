@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'interfaces/auth_service.dart';
+import '../../interfaces/firebase_auth_service.dart';
 
 class AuthService implements IAuthService {
   @override
