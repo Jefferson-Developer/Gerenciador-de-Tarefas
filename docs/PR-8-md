@@ -1,0 +1,26 @@
+
+# Descrição do Pull Request: Implementação das Classes de Serviço do Aplicativo
+
+Neste pull request, as classes de serviço do aplicativo foram criadas, todas herdando da interface `IFirebaseDatabaseServices`. Esta interface requer uma implementação CRUD para operações no banco de dados Firebase.
+
+## Pontos Importantes
+
+### Herança da Interface `IFirebaseDatabaseServices`:
+
+- As classes de serviço foram desenvolvidas para herdar os métodos da interface `IFirebaseDatabaseServices`, estabelecendo uma estrutura padronizada para as operações no banco de dados.
+- A interface define os métodos necessários para criar, ler, atualizar e deletar (`CRUD`) dados do Firebase, garantindo que cada classe de serviço tenha a mesma estrutura de implementação.
+
+### Armazenamento no Firebase:
+
+- Todo o banco de dados é armazenado no Firebase, com uma coleção dedicada para cada usuário.
+- Dentro de cada coleção, foram criadas subcoleções para organizar projetos e tarefas de cada usuário.
+- Essa abordagem permite que cada usuário tenha uma estrutura de dados separada e bem organizada no Firebase, facilitando futuras manutenções e operações de consulta.
+
+### Constantes para Valores do Map:
+
+- Para garantir consistência nos dados e facilitar futuras mudanças, todos os valores usados em operações de mapa (`Map`) são armazenados em constantes.
+- Isso permite que, se houver necessidade de mudança em algum nome de chave ou valor, a alteração seja feita de forma simples e centralizada, minimizando erros.
+
+## Conclusão
+
+Essas implementações fornecem uma estrutura sólida para o gerenciamento de dados no Firebase, garantindo flexibilidade e manutenibilidade no desenvolvimento do aplicativo. A herança da interface `IFirebaseDatabaseServices` padroniza o desenvolvimento e promove uma organização mais clara do código.
