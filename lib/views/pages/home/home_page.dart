@@ -13,10 +13,19 @@ class _HomePageState extends AppState<HomePage, HomeState> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: Container(),
-    );
+        appBar: AppBar(
+          title: const Text('Home'),
+        ),
+        body: Column(
+          children: [
+            Container(),
+            ElevatedButton(
+              onPressed: () {
+                state.createTask();
+              },
+              child: const Text('Cadastrar'),
+            ),
+          ],
+        ));
   }
 }

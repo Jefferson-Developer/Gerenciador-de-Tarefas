@@ -14,7 +14,6 @@ class AppWidget extends StatelessWidget {
       theme: AppConfigUI.theme,
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
-      
     );
   }
 }

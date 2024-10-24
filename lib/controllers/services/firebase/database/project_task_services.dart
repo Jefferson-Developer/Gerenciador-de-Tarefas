@@ -40,7 +40,7 @@ class ProjectTaskService extends IFirebaseDatabaseServices<ProjectTask> {
           isEqualTo: _projectUid,
         )
         .get();
-    List<ProjectTask> tasks = [];
+    final List<ProjectTask> tasks = [];
 
     for (QueryDocumentSnapshot doc in querySnapshot.docs) {
       tasks.add(

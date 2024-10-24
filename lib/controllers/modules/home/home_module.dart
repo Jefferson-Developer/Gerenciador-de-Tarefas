@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/controllers/services/firebase/database/project_services.dart';
 import 'package:job_timer/views/pages/home/home_page.dart';
 import 'package:job_timer/views/pages/home/home_state.dart';
 
@@ -6,9 +7,14 @@ class HomeModule extends Module {
   @override
   void binds(Injector i) {
     super.binds(i);
-
+    i.addLazySingleton<ProjectServices>(
+      () => ProjectServices(),
+      config: BindConfig(),
+    );
     i.addLazySingleton<HomeState>(
-      () => HomeState(),
+      () => HomeState(
+        projectService: i.get(),
+      ),
       config: BindConfig(),
     );
   }
