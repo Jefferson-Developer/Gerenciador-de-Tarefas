@@ -8,11 +8,12 @@ class Project extends Equatable {
   final String name;
   final ProjectStatus status;
   final List<ProjectTask>? tasks;
-
+  final int estimate;
   const Project({
     this.uid,
     required this.name,
     required this.status,
+    required this.estimate,
     this.tasks,
   });
 
@@ -22,6 +23,7 @@ class Project extends Equatable {
         name,
         status,
         tasks,
+        estimate
       ];
 
   factory Project.fromMap({
@@ -32,6 +34,7 @@ class Project extends Equatable {
       uid: uid,
       name: map[ProjectConstants.NAME],
       status: ProjectStatus.values[map[ProjectConstants.STATUS]],
+      estimate: map[ProjectConstants.ESTIMATE],
     );
   }
 
@@ -39,6 +42,7 @@ class Project extends Equatable {
     return {
       ProjectConstants.NAME: name,
       ProjectConstants.STATUS: status.index,
+      ProjectConstants.ESTIMATE: estimate,
     };
   }
 }
