@@ -3,6 +3,10 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/models/entities/project_status.dart';
 
 class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
+  ValueNotifier<ProjectStatus> status;
+  HeaderProjectsMenu({
+    required this.status,
+  });
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
@@ -17,33 +21,41 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
             SizedBox(
               width: constraints.maxWidth * 0.4,
               child: DropdownButtonFormField<ProjectStatus>(
+                value: status.value,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
+                  isDense: true, // Reduz o espaçamento interno
+                  contentPadding: const EdgeInsets.symmetric(
+                      vertical: 8, horizontal: 12), // Ajuste de padding
                 ),
-                padding: const EdgeInsets.all(10),
                 isExpanded: true,
                 items: ProjectStatus.values
                     .map((e) => DropdownMenuItem(
                           value: e,
                           child: Text(
                             e.label,
+                            softWrap: false, // Desativa quebra automática
+                            overflow: TextOverflow.ellipsis, // Adiciona "..." se cortar
                           ),
                         ))
                     .toList(),
-                onChanged: (value) {},
+                onChanged: (value) {
+                  status.value = value!;
+                },
               ),
             ),
             SizedBox(
-                width: constraints.maxWidth * 0.4,
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    Modular.to.pushNamed('/project/register/');
-                  },
-                  label: const Text('Novo Projeto'),
-                  icon: const Icon(Icons.add),
-                )),
+              width: constraints.maxWidth * 0.4,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Modular.to.pushNamed('/project/register/');
+                },
+                label: const Text('Novo Projeto'),
+                icon: const Icon(Icons.add),
+              ),
+            ),
           ],
         ),
       );
