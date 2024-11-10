@@ -6,9 +6,9 @@ class HomeModule extends Module {
   @override
   void binds(Injector i) {
     super.binds(i);
-
-    i.addLazySingleton<HomeState>(
-      () => HomeState(),
+    i.addSingleton<HomeState>(
+      () => HomeState(
+      ),
       config: BindConfig(),
     );
   }

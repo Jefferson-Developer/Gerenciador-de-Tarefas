@@ -3,12 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:job_timer/controllers/services/interfaces/firebase_database_services.dart';
 import 'package:job_timer/models/constants/global_constants.dart';
 import 'package:job_timer/models/constants/project_tasks_constants.dart';
-import 'package:job_timer/models/project_task.dart';
+import 'package:job_timer/models/entities/project_task.dart';
 
-class ProjectTaskService extends IFirebaseDatabaseServices<ProjectTask> {
+class ProjectTaskDAO extends IFirebaseDatabaseServices<ProjectTask> {
   final CollectionReference _db;
   final String _projectUid;
-  ProjectTaskService({
+  ProjectTaskDAO({
     required String projectUid,
   })  : _db = FirebaseFirestore.instance
             .collection(USERS)
@@ -40,7 +40,7 @@ class ProjectTaskService extends IFirebaseDatabaseServices<ProjectTask> {
           isEqualTo: _projectUid,
         )
         .get();
-    List<ProjectTask> tasks = [];
+    final List<ProjectTask> tasks = [];
 
     for (QueryDocumentSnapshot doc in querySnapshot.docs) {
       tasks.add(

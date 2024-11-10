@@ -3,12 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:job_timer/controllers/services/interfaces/firebase_database_services.dart';
 import 'package:job_timer/models/constants/global_constants.dart';
 import 'package:job_timer/models/constants/project_constants.dart';
-import 'package:job_timer/models/project.dart';
+import 'package:job_timer/models/entities/project.dart';
 
-class ProjectServices extends IFirebaseDatabaseServices<Project> {
+class ProjectDAO extends IFirebaseDatabaseServices<Project> {
   final CollectionReference _db;
 
-  ProjectServices()
+  ProjectDAO()
       : _db = FirebaseFirestore.instance
             .collection(USERS)
             .doc(FirebaseAuth.instance.currentUser!.uid)

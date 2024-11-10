@@ -5,4 +5,5 @@ class ProjectConstants {
   static const String NAME = "name";
   static const String STATUS = "status";
   static const String TASKS = "tasks";
+  static const String ESTIMATE = "estimate";
 }
