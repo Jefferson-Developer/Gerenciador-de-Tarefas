@@ -1,3 +1,4 @@
+import 'package:job_timer/models/entities/project.dart';
 import 'package:job_timer/models/models/project_task_model.dart';
 import 'package:job_timer/models/entities/project_status.dart';
 
@@ -16,4 +17,14 @@ class ProjectModel {
   }) : _uid = uid;
 
   String? get uid => _uid;
+
+  factory ProjectModel.fromEntity(Project project){
+    return ProjectModel(
+      uid: project.uid,
+      name: project.name,
+      status: project.status,
+      tasks: project.tasks?.map((task) => ProjectTaskModel.fromEntity(task)).toList(),
+      estimate: project.estimate,
+    );
+  }
 }

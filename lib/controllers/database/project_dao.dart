@@ -4,6 +4,7 @@ import 'package:job_timer/controllers/services/interfaces/firebase_database_serv
 import 'package:job_timer/models/constants/global_constants.dart';
 import 'package:job_timer/models/constants/project_constants.dart';
 import 'package:job_timer/models/entities/project.dart';
+import 'package:job_timer/models/entities/project_status.dart';
 
 class ProjectDAO extends IFirebaseDatabaseServices<Project> {
   final CollectionReference _db;
@@ -49,5 +50,26 @@ class ProjectDAO extends IFirebaseDatabaseServices<Project> {
     await _db.doc(data.uid).set(
           data.toMap(),
         );
+  }
+
+  @override
+  Future<List<Project>> findByStatus(
+    ProjectStatus status,
+  ) async {
+    final querySnapshot = await _db
+        .where(
+          'status',
+          isEqualTo: status.index,
+        )
+        .get();
+    List<Project> projects = [];
+
+    for (QueryDocumentSnapshot doc in querySnapshot.docs) {
+      projects.add(Project.fromMap(
+        map: doc.data() as Map<String, dynamic>,
+        uid: doc.id,
+      ));
+    }
+    return projects;
   }
 }

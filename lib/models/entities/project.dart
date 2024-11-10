@@ -18,13 +18,7 @@ class Project extends Equatable {
   });
 
   @override
-  List<Object?> get props => [
-        uid,
-        name,
-        status,
-        tasks,
-        estimate
-      ];
+  List<Object?> get props => [uid, name, status, tasks, estimate];
 
   factory Project.fromMap({
     required Map<String, dynamic> map,
@@ -35,14 +29,31 @@ class Project extends Equatable {
       name: map[ProjectConstants.NAME],
       status: ProjectStatus.values[map[ProjectConstants.STATUS]],
       estimate: map[ProjectConstants.ESTIMATE],
+      tasks: map[ProjectConstants.TASKS]
+          .map<ProjectTask>((task) => ProjectTask.fromMap(
+                map: task,
+              ))
+          .toList(),
     );
   }
 
   Map<String, dynamic> toMap() {
+    ProjectTask task = ProjectTask(
+      name: 'Task 1',
+      duration: 10,
+      created: DateTime.now(),
+    );
+
     return {
       ProjectConstants.NAME: name,
       ProjectConstants.STATUS: status.index,
       ProjectConstants.ESTIMATE: estimate,
+      ProjectConstants.TASKS: tasks == null
+          ? [
+              task.toMap(),
+              task.toMap(),
+            ]
+          : tasks?.map((task) => task.toMap()).toList(),
     };
   }
 }

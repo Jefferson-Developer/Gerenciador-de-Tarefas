@@ -25,23 +25,18 @@ class ProjectTask extends Equatable {
 
   factory ProjectTask.fromMap({
     required Map<String, dynamic> map,
-    required String uid,
   }) {
     return ProjectTask(
-      uid: uid,
       name: map[ProjectTasksConstants.NAME],
       duration: map[ProjectTasksConstants.DURATION],
       created: DateTime.parse(map[ProjectTasksConstants.CREATED]),
     );
   }
 
-  Map<String, dynamic> toMap({
-    required String projectUid,
-  }) {
+  Map<String, dynamic> toMap() {
     return {
       ProjectTasksConstants.NAME: name,
       ProjectTasksConstants.DURATION: duration,
-      ProjectTasksConstants.PROJECT_UID: projectUid,
       ProjectTasksConstants.CREATED: created.toIso8601String(),
     };
   }
