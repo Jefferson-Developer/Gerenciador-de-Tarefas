@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:job_timer/controllers/exception/failure.dart';
 import 'package:job_timer/controllers/database/project_dao.dart';
-import 'package:job_timer/models/project.dart';
+import 'package:job_timer/models/entities/project.dart';
 
 import './project_repository.dart';
 

@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:job_timer/controllers/services/interfaces/firebase_database_services.dart';
 import 'package:job_timer/models/constants/global_constants.dart';
 import 'package:job_timer/models/constants/project_constants.dart';
-import 'package:job_timer/models/project.dart';
+import 'package:job_timer/models/entities/project.dart';
 
 class ProjectDAO extends IFirebaseDatabaseServices<Project> {
   final CollectionReference _db;

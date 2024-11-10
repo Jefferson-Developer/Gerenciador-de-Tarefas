@@ -1,4 +1,4 @@
-import 'package:job_timer/controllers/models/project_model.dart';
+import 'package:job_timer/models/models/project_model.dart';
 
 abstract interface class ProjectService {
   Future<void> register(ProjectModel project);

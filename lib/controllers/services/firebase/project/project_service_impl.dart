@@ -1,6 +1,6 @@
-import 'package:job_timer/controllers/models/project_model.dart';
+import 'package:job_timer/models/models/project_model.dart';
 import 'package:job_timer/controllers/repository/project_repository_impl.dart';
-import 'package:job_timer/models/project.dart';
+import 'package:job_timer/models/entities/project.dart';
 
 import './project_service.dart';
 

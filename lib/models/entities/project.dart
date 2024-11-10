@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:job_timer/models/constants/project_constants.dart';
-import 'package:job_timer/models/project_status.dart';
-import 'package:job_timer/models/project_task.dart';
+import 'package:job_timer/models/entities/project_status.dart';
+import 'package:job_timer/models/entities/project_task.dart';
 
 class Project extends Equatable {
   final String? uid;
