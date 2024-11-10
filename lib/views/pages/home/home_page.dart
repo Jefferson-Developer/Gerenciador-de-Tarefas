@@ -13,6 +13,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends AppState<HomePage, HomeState> {
   @override
+  void initState() {
+    super.initState();
+    state.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
@@ -38,9 +44,35 @@ class _HomePageState extends AppState<HomePage, HomeState> {
               ),
             ),
             SliverPersistentHeader(
-              delegate: HeaderProjectsMenu(),
+              delegate: HeaderProjectsMenu(status: state.status),
               pinned: true,
             ),
+            SliverToBoxAdapter(
+              child: Center(
+                child: ValueListenableBuilder(
+                    valueListenable: state.isLoadingNotifier,
+                    builder: (context, isLoading, widget) {
+                      if (isLoading) {
+                        return const CircularProgressIndicator();
+                      }
+                      if (state.errorMessage != null) {
+                        return Text(state.errorMessage!);
+                      } else {
+                        return ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: state.projects.length,
+                          itemBuilder: (context, index) {
+                            final project = state.projects[index];
+                            return ListTile(
+                              title: Text('Projeto: ${project.name}'),
+                              subtitle: Text('Tempo: ${project.estimate} minutos'),
+                            );
+                          },
+                        );
+                      }
+                    }),
+              ),
+            )
           ],
         ),
       ),

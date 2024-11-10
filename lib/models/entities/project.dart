@@ -29,11 +29,13 @@ class Project extends Equatable {
       name: map[ProjectConstants.NAME],
       status: ProjectStatus.values[map[ProjectConstants.STATUS]],
       estimate: map[ProjectConstants.ESTIMATE],
-      tasks: map[ProjectConstants.TASKS]
-          .map<ProjectTask>((task) => ProjectTask.fromMap(
-                map: task,
-              ))
-          .toList(),
+      tasks: map[ProjectConstants.TASKS] != null
+          ? map[ProjectConstants.TASKS]
+              .map<ProjectTask>((task) => ProjectTask.fromMap(
+                    map: task,
+                  ))
+              .toList()
+          : [],
     );
   }
 
