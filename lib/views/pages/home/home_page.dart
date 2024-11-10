@@ -17,11 +17,12 @@ class _HomePageState extends AppState<HomePage, HomeState> {
     return Scaffold(
       drawer: Drawer(
         child: SafeArea(
-            child: ListTile(
-          title: GestureDetector(
-              onTap: () => Modular.to.navigate('/project/register/'),
-              child: const Text('Sair')),
-        )),
+          child: ListTile(
+            title: GestureDetector(
+                onTap: () => Modular.to.navigate('/project/register/'),
+                child: const Text('Sair')),
+          ),
+        ),
       ),
       body: SafeArea(
         child: CustomScrollView(

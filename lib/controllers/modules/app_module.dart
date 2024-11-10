@@ -14,9 +14,6 @@ class AppModule extends Module {
   void binds(i) {
     i.addLazySingleton<SplashState>(
       () => SplashState(),
-      // config: BindConfig(
-      //   onDispose: (bloc) => bloc.dispose(),
-      // ),
     );
     i.addLazySingleton<AuthService>(
       () => AuthService(),
