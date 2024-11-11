@@ -75,13 +75,6 @@ Job Timer é um aplicativo desenvolvido para ajudar no controle de tempo de proj
 3. Faça suas alterações e commit: `git commit -m 'Minha nova feature'`.
 4. Envie para o seu fork: `git push origin minha-feature`.
 5. Crie um Pull Request.
-
----
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
-
 ---
 
 ## Contato
