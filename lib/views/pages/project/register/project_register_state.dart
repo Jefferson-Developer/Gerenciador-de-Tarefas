@@ -37,7 +37,7 @@ class ProjectRegisterState extends ChangeNotifier {
         );
         AsukaSnackbar.success('Projeto salvo com sucesso!').show();
         log('Projeto salvo com sucesso');
-        Modular.to.pop();
+        Modular.to.pop(true);
       } catch (error, stackTrace) {
         log('Erro ao salvar', error: error, stackTrace: stackTrace);
         AsukaSnackbar.alert('Ocorreu um erro salvar').show();

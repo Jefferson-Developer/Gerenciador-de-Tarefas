@@ -8,7 +8,7 @@ class ProjectTaskModel {
   ProjectTaskModel({
     required this.name,
     required this.duration,
-    required uid,
+    uid,
   }) : _uid = uid;
 
   String? get uid => _uid;
@@ -18,6 +18,14 @@ class ProjectTaskModel {
       uid: task.uid,
       name: task.name,
       duration: task.duration,
+    );
+  }
+  ProjectTask toEntity() {
+    return ProjectTask(
+      uid: uid,
+      name: name,
+      duration: duration,
+      created: DateTime.now(),
     );
   }
 }
