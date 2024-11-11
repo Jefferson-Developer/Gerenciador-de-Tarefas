@@ -45,10 +45,10 @@ class ProjectDAO extends IFirebaseDatabaseServices<Project> {
 
   @override
   Future<void> update({
-    required Project data,
+    required Project project,
   }) async {
-    await _db.doc(data.uid).set(
-          data.toMap(),
+    await _db.doc(project.uid).update(
+          project.toMap(),
         );
   }
 

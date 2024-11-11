@@ -4,8 +4,10 @@ import 'package:job_timer/models/entities/project_status.dart';
 
 class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
   ValueNotifier<ProjectStatus> status;
+  Function reload;
   HeaderProjectsMenu({
     required this.status,
+    required this.reload
   });
   @override
   Widget build(
@@ -49,8 +51,11 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
             SizedBox(
               width: constraints.maxWidth * 0.4,
               child: ElevatedButton.icon(
-                onPressed: () {
-                  Modular.to.pushNamed('/project/register/');
+                onPressed: () async{
+                  bool? response = await Modular.to.pushNamed('/project/register/');
+                  if(response == true){
+                    reload();
+                  }
                 },
                 label: const Text('Novo Projeto'),
                 icon: const Icon(Icons.add),

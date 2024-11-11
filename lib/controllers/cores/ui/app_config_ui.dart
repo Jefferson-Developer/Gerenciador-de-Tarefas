@@ -6,6 +6,21 @@ class AppConfigUI {
   static final ThemeData theme = ThemeData(
     primarySwatch: _primarySwatch,
     primaryColor: AppColors.primaryColor,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.primaryColor,
+      centerTitle: true,
+      titleTextStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+      ),
+    ),
+    buttonTheme: const ButtonThemeData(
+      buttonColor: AppColors.primaryColor,
+      textTheme: ButtonTextTheme.primary,
+    ),
+    iconTheme: const IconThemeData(
+      color: Colors.white,
+    ),
     primaryColorLight: const Color(0xFF219FFF),
     inputDecorationTheme: const InputDecorationTheme(
       border: OutlineInputBorder(),
@@ -34,7 +49,7 @@ class AppConfigUI {
   static const MaterialColor _primarySwatch = MaterialColor(
     0xFF006680,
     {
-      50: AppColors.primaryColor,
+      50: Color(0xFF005c73),
       100: Color(0xFF005c73),
       200: Color(0xFF005266),
       300: Color(0xFF00475a),

@@ -1,13 +1,17 @@
 import 'package:flutter/cupertino.dart';
+import 'package:job_timer/controllers/services/firebase/auth/auth_service.dart';
 import 'package:job_timer/controllers/services/firebase/project/project_service_impl.dart';
 import 'package:job_timer/models/entities/project_status.dart';
 import 'package:job_timer/models/models/project_model.dart';
 
 class HomeState extends ChangeNotifier {
   final ProjectServiceImpl _projectService;
-
-  HomeState({required ProjectServiceImpl projectService})
-      : _projectService = projectService;
+  final AuthService _authService;
+  HomeState({
+    required ProjectServiceImpl projectService,
+    required AuthService authService,
+  })  : _projectService = projectService,
+        _authService = authService;
   final status = ValueNotifier<ProjectStatus>(ProjectStatus.em_andamento);
 
   final isLoadingNotifier = ValueNotifier<bool>(false);
@@ -16,12 +20,12 @@ class HomeState extends ChangeNotifier {
 
   Future<void> initState() async {
     status.addListener(() {
-      _getProjects();
+      getProjects();
     });
-    _getProjects();
+    getProjects();
   }
 
-  Future<void> _getProjects() async {
+  Future<void> getProjects() async {
     try {
       isLoadingNotifier.value = true;
       projects = await _projectService.findByStatus(status.value);
@@ -31,4 +35,8 @@ class HomeState extends ChangeNotifier {
       isLoadingNotifier.value = false;
     }
   }
+
+  Future<void> signOut() async {
+    await _authService.signOut();
+  } 
 }

@@ -16,6 +16,7 @@ class HomeModule extends Module {
     i.addLazySingleton<HomeState>(
       () => HomeState(
         projectService: i.get(),
+        authService: i.get(),
       ),
     );
   }
