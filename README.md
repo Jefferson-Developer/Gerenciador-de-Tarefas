@@ -86,3 +86,8 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 Desenvolvedor: Jefferson Pereira  
 [LinkedIn](https://www.linkedin.com/in/jefferson-oliveira-780a191b6/) | [Email](mailto:jpo.developer@gmail.com)
+
+![alt text](images/readme/home.png)
+![alt text](images/readme/projetos.png)
+![alt text](images/readme/dashboard.png)
+![alt text](images/readme/task.png)
