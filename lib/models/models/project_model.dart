@@ -5,7 +5,7 @@ import 'package:job_timer/models/entities/project_status.dart';
 class ProjectModel {
   final String? _uid;
   final String name;
-  final ProjectStatus status;
+  ProjectStatus status;
   final List<ProjectTaskModel> tasks;
   final int estimate;
   ProjectModel({
@@ -39,4 +39,5 @@ class ProjectModel {
       estimate: project.estimate,
     );
   }
+  
 }

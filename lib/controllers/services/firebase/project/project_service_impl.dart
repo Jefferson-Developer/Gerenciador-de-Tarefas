@@ -28,4 +28,16 @@ class ProjectServiceImpl implements ProjectService {
     final projects = await _projectRepository.findByStatus(status);
     return projects.map((project) => ProjectModel.fromEntity(project)).toList();
   }
+
+  @override
+  Future<void> update(ProjectModel model) async {
+    final project = Project(
+      name: model.name,
+      status: model.status,
+      estimate: model.estimate,
+      uid: model.uid,
+      tasks: model.tasks.map((task) => task.toEntity()).toList(),
+    );
+    await _projectRepository.update(project);
+  }
 }

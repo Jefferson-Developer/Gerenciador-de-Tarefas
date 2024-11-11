@@ -40,4 +40,13 @@ class ProjectTask extends Equatable {
       ProjectTasksConstants.CREATED: created.toIso8601String(),
     };
   }
+
+  ProjectTask toEntity() {
+    return ProjectTask(
+      uid: uid,
+      name: name,
+      duration: duration,
+      created: DateTime.now(),
+    );
+  }
 }

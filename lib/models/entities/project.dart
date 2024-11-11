@@ -47,4 +47,5 @@ class Project extends Equatable {
       ProjectConstants.TASKS:  tasks.map((task) => task.toMap()).toList(),
     };
   }
+  
 }

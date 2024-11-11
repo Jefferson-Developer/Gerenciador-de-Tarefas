@@ -39,9 +39,10 @@ class _HomePageState extends AppState<HomePage, HomeState> {
               expandedHeight: 100,
               toolbarHeight: 100,
               centerTitle: true,
-              shape: BeveledRectangleBorder(
-                borderRadius:
-                    BorderRadius.vertical(bottom: Radius.circular(15)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(15),
+                ),
               ),
             ),
             SliverPersistentHeader(
@@ -73,6 +74,7 @@ class _HomePageState extends AppState<HomePage, HomeState> {
                       (context, index) {
                         return ProjectTile(
                           project: state.projects[index],
+                          refresh: state.getProjects,
                         );
                       },
                       childCount: state.projects.length,
