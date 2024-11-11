@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/controllers/helpers/app_state.dart';
 import 'package:job_timer/views/pages/home/home_state.dart';
 import 'package:job_timer/views/pages/home/widgets/header_projects_menu.dart';
+import 'package:job_timer/views/pages/home/widgets/project_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,35 +45,42 @@ class _HomePageState extends AppState<HomePage, HomeState> {
               ),
             ),
             SliverPersistentHeader(
-              delegate: HeaderProjectsMenu(status: state.status),
+              delegate: HeaderProjectsMenu(
+                status: state.status,
+                reload: state.getProjects,
+              ),
               pinned: true,
             ),
-            SliverToBoxAdapter(
-              child: Center(
-                child: ValueListenableBuilder(
-                    valueListenable: state.isLoadingNotifier,
-                    builder: (context, isLoading, widget) {
-                      if (isLoading) {
-                        return const CircularProgressIndicator();
-                      }
-                      if (state.errorMessage != null) {
-                        return Text(state.errorMessage!);
-                      } else {
-                        return ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: state.projects.length,
-                          itemBuilder: (context, index) {
-                            final project = state.projects[index];
-                            return ListTile(
-                              title: Text('Projeto: ${project.name}'),
-                              subtitle: Text('Tempo: ${project.estimate} minutos'),
-                            );
-                          },
+            ValueListenableBuilder(
+              valueListenable: state.isLoadingNotifier,
+              builder: (context, isLoading, widget) {
+                if (isLoading) {
+                  return const SliverToBoxAdapter(
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  );
+                }
+                if (state.errorMessage != null) {
+                  return SliverToBoxAdapter(
+                    child: Center(
+                      child: Text(state.errorMessage!),
+                    ),
+                  );
+                } else {
+                  return SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        return ProjectTile(
+                          project: state.projects[index],
                         );
-                      }
-                    }),
-              ),
-            )
+                      },
+                      childCount: state.projects.length,
+                    ),
+                  );
+                }
+              },
+            ),
           ],
         ),
       ),

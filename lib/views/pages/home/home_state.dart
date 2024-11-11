@@ -16,12 +16,12 @@ class HomeState extends ChangeNotifier {
 
   Future<void> initState() async {
     status.addListener(() {
-      _getProjects();
+      getProjects();
     });
-    _getProjects();
+    getProjects();
   }
 
-  Future<void> _getProjects() async {
+  Future<void> getProjects() async {
     try {
       isLoadingNotifier.value = true;
       projects = await _projectService.findByStatus(status.value);
