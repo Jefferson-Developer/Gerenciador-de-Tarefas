@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/controllers/helpers/app_state.dart';
 import 'package:job_timer/views/pages/home/home_state.dart';
 import 'package:job_timer/views/pages/home/widgets/header_projects_menu.dart';
@@ -26,8 +25,7 @@ class _HomePageState extends AppState<HomePage, HomeState> {
         child: SafeArea(
           child: ListTile(
             title: GestureDetector(
-                onTap: () => Modular.to.navigate('/project/register/'),
-                child: const Text('Sair')),
+                onTap: state.signOut, child: const Text('Sair')),
           ),
         ),
       ),
@@ -39,6 +37,9 @@ class _HomePageState extends AppState<HomePage, HomeState> {
               expandedHeight: 100,
               toolbarHeight: 100,
               centerTitle: true,
+              iconTheme: IconThemeData(
+                color: Colors.white, // Alterar a cor do ícone aqui
+              ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
                   bottom: Radius.circular(15),

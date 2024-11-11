@@ -18,7 +18,9 @@ class AppConfigUI {
       buttonColor: AppColors.primaryColor,
       textTheme: ButtonTextTheme.primary,
     ),
-    
+    iconTheme: const IconThemeData(
+      color: Colors.white,
+    ),
     primaryColorLight: const Color(0xFF219FFF),
     inputDecorationTheme: const InputDecorationTheme(
       border: OutlineInputBorder(),

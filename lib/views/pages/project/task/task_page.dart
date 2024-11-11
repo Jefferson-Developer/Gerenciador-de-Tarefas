@@ -43,6 +43,7 @@ class _TaskPageState extends AppState<TaskPage, TaskState> {
                     labelText: 'Nome da task',
                   ),
                 ),
+                const SizedBox(height: 10),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   validator: Validatorless.multiple([
