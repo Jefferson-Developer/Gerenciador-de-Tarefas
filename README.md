@@ -1,7 +1,6 @@
-
 # Job Timer
 
-Job Timer é um aplicativo de estudo desenvolvido para ajudar no controle de tempo de projetos. Ele permite que os usuários cadastrem projetos e registrem o controle de tempo através de tarefas (tasks). O projeto segue a arquitetura MVC e utiliza o `ChangeNotifier` para gerenciamento de estado, priorizando um código limpo e organizado.
+Job Timer é um aplicativo desenvolvido para ajudar no controle de tempo de projetos. Ele permite que os usuários cadastrem projetos e registrem o controle de tempo através de tarefas (tasks). O projeto segue os princípios de **Clean Architecture** e **SOLID**, garantindo um código limpo, escalável e de fácil manutenção. Utiliza o `ChangeNotifier` para gerenciamento de estado e promove uma separação clara entre camadas de responsabilidade.
 
 ---
 
@@ -24,13 +23,12 @@ Job Timer é um aplicativo de estudo desenvolvido para ajudar no controle de tem
 ## Tecnologias Utilizadas
 
 ### **Arquitetura**
-- **MVC (Model-View-Controller):** Organização do código para facilitar a manutenção e evolução do projeto.
-- **ChangeNotifier:** Gerenciamento de estados eficiente e reativo para atualizar as telas do aplicativo.
+- **Clean Architecture:** Estrutura organizada em camadas (Presentation, Domain, Data), promovendo maior desacoplamento e facilidade de manutenção.
+- **SOLID:** Princípios aplicados para manter o código coeso e flexível para mudanças.
+- **`flutter_modular`:** Navegação e injeção de dependências otimizadas.
+- **`ChangeNotifier`:** Gerenciamento de estados eficiente e reativo.
 
 ### **Bibliotecas**
-- **`cupertino_icons`:** Ícones no estilo Cupertino para uma interface mais moderna e consistente.
-- **`flutter_modular`:** Facilita a navegação e a injeção de dependências, promovendo uma separação clara entre os módulos do aplicativo.
-- **`asuka`:** Utilizado para exibir mensagens contextuais (snackbars e diálogos), garantindo uma experiência de usuário melhorada.
 - **`validatorless`:** Simplifica a validação de campos de formulário com validações personalizáveis.
 - **`fl_chart`:** Permite criar gráficos intuitivos e atraentes para exibir informações no dashboard.
 - **`firebase_core` e `firebase_auth`:** Integração com o Firebase para autenticação e serviços de backend.
@@ -43,6 +41,10 @@ Job Timer é um aplicativo de estudo desenvolvido para ajudar no controle de tem
 
 ## Organização do Código
 
+- **Camadas de Arquitetura:** 
+  - **Presentation:** Camada de interface do usuário.
+  - **Domain:** Contém as regras de negócio e entidades.
+  - **Data:** Responsável por fontes de dados externas, como APIs e banco de dados.
 - **Classes de Tema:** Todas as cores do aplicativo são armazenadas em uma classe centralizada para facilitar a consistência visual e manutenção.
 - **Classes de Constantes:** Todas as chaves usadas em mapeamentos (mappers) são armazenadas em classes constantes, promovendo segurança e organização no acesso aos dados.
 
@@ -87,7 +89,11 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 Desenvolvedor: Jefferson Pereira  
 [LinkedIn](https://www.linkedin.com/in/jefferson-oliveira-780a191b6/) | [Email](mailto:jpo.developer@gmail.com)
 
-![alt text](docs/images/readme/home.png)
-![alt text](docs/images/readme/projetos.png)
-![alt text](docs/images/readme/dashboard.png)
-![alt text](docs/images/readme/task.png)
+---
+
+## Imagens do Aplicativo
+
+![Tela Inicial](docs/images/readme/home.png)
+![Lista de Projetos](docs/images/readme/projetos.png)
+![Dashboard do Projeto](docs/images/readme/dashboard.png)
+![Tarefas](docs/images/readme/task.png)
